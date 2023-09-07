@@ -1,0 +1,15 @@
+version: "3.3"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/app
+    tty:
+      true
+        env_file:
+      - ./.go_env
